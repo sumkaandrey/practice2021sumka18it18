@@ -1,0 +1,53 @@
+{% extends 'magazine/base.html' %}
+
+{% block title %}
+История заказов
+{% endblock %}
+
+{% block content %}
+<h1 class="display-4 fw-normal">Добро пожаловать!</h1>
+        <p class="lead fw-normal">На этом сайте Вы сможете заказать любые товары в розницу для Ваших сетей магазинов
+            во многие города России!</p>
+
+        <div class="container mt-5">
+    <div class="row">
+    <div class="col-5">
+    <h1>Доступные товары</h1>
+        <form action="" method="post">
+
+            <label for="product">Товар</label>
+
+            <input type="text" id="product" class="form-control" name="city" placeholder="Введите товар">
+            <input type="submit" name="send" class="mt-2 btn btn-danger" value="Добавить" placeholder="Введите товар">
+        </form>
+
+    </div>
+        <div class="col-5 offset-2">
+
+        <h1>Информация</h1>
+
+
+        <div class="alert alert-primary">
+        <div class="row">
+                <div class="col-9">
+            </b>Товар: </b>Батончики "Twix"<br>
+            </b>Количество: </b>1 упаковка по 40 штук<br>
+        </div>
+    </div>
+</div>
+
+
+</div>
+    </div>
+</div>
+{% endblock %}
+
+
+<h1>Доступные товары</h1>
+<form method="post">
+    {% csrf_token %}
+    {% form.password %}
+    {% form.mail %}
+    <input type="submit" name="send" class="mt-2 btn btn-danger" value="Добавить">
+    <span>{{ error }}</span>
+</form>
