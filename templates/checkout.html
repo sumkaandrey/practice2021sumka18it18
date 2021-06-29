@@ -1,0 +1,227 @@
+{% extends 'magazine/base.html' %}
+
+{% block title %}
+Оформление заказов
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <div class="py-5 text-center">
+      <h2>Оформление заказа</h2>
+      <p class="lead">Заполните формы платежного адреса и способ оплаты для покупки выбранных вами товаров.
+      Тщательно проверьте введенные Вами данные!</p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-5 col-lg-4 order-md-last">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-primary">Ваш заказ</span>
+          <span class="badge bg-primary rounded-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Баточники "Twix"</h6>
+              <small class="text-muted">1 х 40 штук</small>
+            </div>
+            <span class="text-muted">1500 руб.</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Журнал "Еда"</h6>
+              <small class="text-muted">1 х 200 штук.</small>
+            </div>
+            <span class="text-muted">4000 руб.</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between lh-sm">
+            <div>
+              <h6 class="my-0">Картофель</h6>
+              <small class="text-muted">1 кг x 50 руб.</small>
+            </div>
+            <span class="text-muted">500 руб.</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between bg-light">
+            <div class="text-success">
+              <h6 class="my-0">Промокод</h6>
+              <small>HELLOWORLD21</small>
+            </div>
+            <span class="text-success">−250 руб.</span>
+          </li>
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Всего (Российских рублей)</span>
+            <strong>5750 руб.</strong>
+          </li>
+        </ul>
+
+        <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Промокод">
+            <button type="submit" class="btn btn-secondary">Ввести</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Платежный адрес</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Имя</label>
+              <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Требуется реальное имя.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Фамилия</label>
+              <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+              <div class="invalid-feedback">
+                Требуется реальная фамилия.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-muted">(Необязательно)</span></label>
+              <input type="email" class="form-control" id="email" placeholder="mail@example.ru">
+              <div class="invalid-feedback">
+                Пожалуйста введите правильный электронный адрес для отслеживания поссылки.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Адрес</label>
+              <input type="text" class="form-control" id="address" placeholder="ул. Пушкина, д. 137, кв. 16" required="">
+              <div class="invalid-feedback">
+                Пожалуйста введите свой адрес доставки
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="country" class="form-label">Магазин</label>
+              <select class="form-select" id="country" required="">
+                <option value="">Выбрать...</option>
+                <option>Магнит</option>
+                  <option>Караван</option>
+                  <option>Пятёрочка</option>
+                  <option>Скидкино</option>
+                  <option>SPAR</option>
+                  <option>АТАК</option>
+                  <option>Перекрёсток</option>
+              </select>
+              <div class="invalid-feedback">
+                Пожалуйстай, выберите существующий магазин.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="state" class="form-label">Город</label>
+              <select class="form-select" id="state" required="">
+                <option value="">Выбрать...</option>
+                <option>Пенза</option>
+                  <option>Москва</option>
+                  <option>Московская область</option>
+                  <option>Санкт-Петербург</option>
+                  <option>Ленинградская область</option>
+                  <option>Казань</option>
+                  <option>Екатеринбург</option>
+                  <option>Волгоград</option>
+                  <option>Самара</option>
+                  <option>Нижний-Новгород</option>
+                  <option>Новосибирск</option>
+                  <option>Челябинск</option>
+                  <option>Омск</option>
+                  <option>Ростов-на-Дону</option>
+                  <option>Уфа</option>
+                  <option>Воронеж</option>
+                  <option>Красноярск</option>
+                  <option>Пермь</option>
+              </select>
+              <div class="invalid-feedback">
+                Пожалуйстай, выберите существующий город.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="zip" class="form-label">Индекс</label>
+              <input type="text" class="form-control" id="zip" placeholder="" required="">
+              <div class="invalid-feedback">
+                Обязательное поле.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address">
+            <label class="form-check-label" for="same-address">Адрес доставки такой же, как мой платежный адрес</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info">
+            <label class="form-check-label" for="save-info">Сохранить информацию для дальнейшего использования</label>
+          </div>
+
+          <hr class="my-4">
+
+          <h4 class="mb-3">Способ оплаты</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
+              <label class="form-check-label" for="credit">Кредитная карта</label>
+            </div>
+            <div class="form-check">
+              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
+              <label class="form-check-label" for="debit">Дебетовая карта</label>
+            </div>
+            <div class="form-check">
+              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
+              <label class="form-check-label" for="paypal">PayPal</label>
+            </div>
+          </div>
+
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <label for="cc-name" class="form-label">Имя на карте</label>
+              <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+              <small class="text-muted">Полное имя на карте</small>
+              <div class="invalid-feedback">
+                  Обязательное поле.
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <label for="cc-number" class="form-label">Номер карты</label>
+              <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+              <div class="invalid-feedback">
+                Обязательное поле.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-expiration" class="form-label">Действительна до</label>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+              <div class="invalid-feedback">
+                Обязательное поле.
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <label for="cc-cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+              <div class="invalid-feedback">
+                Обязательное поле.
+              </div>
+            </div>
+          </div>
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Продолжить оформление заказа</button>
+        </form>
+      </div>
+    </div>
+</div>
+{% endblock %}
